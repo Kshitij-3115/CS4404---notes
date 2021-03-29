@@ -1,0 +1,45 @@
+ 
+                     * important points and notes*
+                  # Topic :-  processing parallelism      Edit date:[22-03-2021]   
+
+    --> Benchmark programs : predevoloped programs those are used by many compoanies to test relative performance of their computers. 
+    --> benchmark suite : collection of varius benchmark programs. SPEC(standerd performance evaluation corporation) is most successfull benchmark suite. 
+    --> performance measurements metrics : 
+        -->  A1. CPI(cycles per instruction) : CPU to be driven by clock of constant freq(clock rate). 
+                 suppose clock freq 'f' => t(cycle time) = 1/f , Ic = instruction count of program 'p' = machine instruction to be executed untill completion. 
+                 Ii = number of executed instruction of type 'i' in 'P' => Ic = sum(Ii for all 'i')
+                 CPI(avg) = (total CPU clock cycles for 'P')/Ic = Sum(CPIi * Ii/Ic) for all 'i' or i<=n where n = number of different instruction types. Ii/Ic = ratio or percentage. 
+             A2. CPU time (T) : execution time of a program. 
+                 ==> case-1 : ignore memory cycle time :- T = (CPIavg * Ic)*t    
+                 ==> case-2 : consider memory cycle time :- T = (Ic*{p+m*k})*t ; p=processor cycles, m=total memory references, k=ratio of memory cycle time ans processor cycle time. 
+                 ==> performance = 1/T ; for above both cases. 
+             A3. SpeedUp : performance gain ratio after some improvement. 
+                 SpeedUp = (CPU time without improvement)/(CPU time with improvement) for entire task. 
+    
+
+        -->  B.  MIPS(millions of instruction per second) rate: how many millions of instructions are executing per second is MIPS rate. 
+                 it is rate of execution of instruction by CPU. 
+                 ==> way-1 : MIPS rate = (f/CPI)*10^(-6) here 'f' is clock frequency and CPI is cycles per instruction. and 10^(-6) is to convert it into millions. 
+                 ==> way-2 : MIPs rate = (Ic/T)*10^(-6) here Ic is instruction count. and T is CPU time. 
+
+        -->  C.  MFLOPS(millions of floating point operations per second) : it deals with only FP instructions. used for anlysis of game & scintific aplications performances. 
+                 ==> MFLOPS = {(number of FP operations executed in program)/(CPU execution time)}*10^(-6). 
+        -->  D.  Throughput(Bandwidth) : Total amount of work done in unit time. eg. number of pages served in unit time is Throughput of a web server etc. 
+                 ==> if computer C1's Throughput is 1.3 times fast as C2 => the number of completed tasks per unit time by C1 = 1.3*(number of completed tasks by C2). 
+        -->  E.  Response time(latency) : time b/w start and completion of any event. 
+                 ==> eg. 'x' milliseconds to perform disk access etc. 
+
+        -->  F.  Reliability : measure of contineous service accomplishment. or time to failure from reference initial instant. four types => 1. MTTF, 2. MTTR, 3. MTBF                   
+        -->  F1. MTTF : mean time to failure, unit is hours of operations. FIT(failures in time) = (1/MTTF)*10^9  ==> 1FIT = 1 failure in 10^(9) hours of device operation. 
+                 ==> MTTf of disks : steps :- put disks in room for months --> calculate failed disks ==> MTTF = (total hours of disk worked comulatively)/(number of failed disks).  
+                    eg. 5 years. best way to analysis of disk failure = annual failure rate. 
+        -->  F2. MTBF : mean time b/w failures, MTBF = MTTF + MTTR where MTTR = measurement of service inturruptions. 
+        -->  G.  Availability : module Availability :- measure of service accomplishment w.r.t alternation b/w two states of accomplishment and instruction. 
+                 ==> Availability = MTTF/MTBF ; for non reduntant systems with repair.
+    --> CPI and MIPS numarical examples : refer slide[28-33] OR page[14-17]
+    --> SpeedUp numarical example : refer slide[34-35] page[17-18]
+    --> MTTF and MTBF numarical examples : refer slide[36-39] page[18-20]
+    --> note : Solve exercise problems from ppt. 
+
+
+                                                                   ----------------Best of luck-----------------------
