@@ -1,0 +1,39 @@
+
+                * important points and notes *
+    # Topic : Processing parallelism - clasification and forms      Edit date : [24-03-2021]
+
+    --> Flynn's taxonomy : system architecture classification. 
+        processor organizations : 1. SISD (single instruction single data stream)
+                                  2. SIMD (single instruction multiple data stream)
+                                  3. MISD (multiple instruction single data stream)
+                                  4. MIMD (multiple instruction multiple data stream)
+        1. SISD : single processor executing single stream of instructions to operate on data in singe memory. eg. Uniprocessing systems, eg. intel pentium 4. 
+        2. SIMD : single instruction stream controlling simultineous processing of multiple processing elements(PE). each PE associated with data memory to execute instruction on different sets of data. 
+                  eg. vector processors, array processor, SSE instructions of X86. 
+                  two types of SMD machines : 1. SIMD with shared memory, 2. SIMD with distributed memory.
+        3. MISD : sequence of data is transmitted to processors, and each is executing different instruction seauence. (NOT implemented commercially). 
+        4. MIMD : set of processors executing different instruction sequences on different data streams.  General purpose processors(each able to process all instructions necessary for a data transformation) 
+                  eg. symmetric multiprocessor,non uniform memory access, clusters, intel core i7  
+                  two types of MIMD machines : 1. MIMD with shared memory, 2. MIMD with distributed memory. 
+    --> classification based on Control Unit multiplicity : 1. Single control unit --> : (Uniprocessors, pipelined ALU, parallel ALU) , 2. multiple cntrol units --> : (multiprocessors, parallel processors) 
+    --> parallelism in different forms : SIMD, MIMD systems, CPU with single CU having pipelined or parallel ALU's , multiple CPU with their respective CU. 
+        terms : CPU :- microprocessor, multicore :- within a microprocessor multiple processors per chip. 
+    --> need of parallelism is to increase Throughput of program execution and to improve utilization of resources.
+    --> The term parallelism is refer to make our programs more faster by making several computations at the same time. for this we need hardware with multiple processing units. 
+    -->  Road : 1. Invalidation of Moore's law :  (in coming future 2025+). Moore's law says that every year the number of transisters in dense IC's becomes doubled.
+                ==> transisters reached the limit of miniauturization. the problem is classical computaion is logically irreversible and logically-irr. computations => more heat disspation=> heat sink required => we cant place transisters so close.
+                2. The end of Dennard scaling in 2004 : Denard scaling is no longer holding. so we need multiple energy efficient processors(cores) per chip instead of Uniprocessors. 
+                ==> Dennard scaling : it states that as transisters get smaller their power density remains constant.
+    
+    --> parallelism forms : 1. Task level :- tasks of a work(in form of codes/programs) to be operated independently and in parallel. 
+                               eg. instruction level parallelism, thread level parallelism, request level parallelism. 
+                            2. Data level :- many data items to be operated on at same time using data stream pipelining. 
+                        
+                       
+    #remember:  //discuss three variations(eg.) given in task level parallilism here. 
+    #remember:  //discuss hardware level support for data level and three variations in task level parallism here.
+
+
+                            -------------------Best of luck--------------------------
+
+          
